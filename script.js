@@ -40,6 +40,33 @@ function selectActive(side) {
 	document.querySelector('.scene').classList.add(`${side}-active`);
 }
 
+function generateOptions(optionTexts) {
+	document.querySelector('.options').classList.add(`active`);
+	document.querySelector('.options').innerHTML = ''
+	for (let option of optionTexts) {
+		document.querySelector('.options').innerHTML += `<div class="option" onclick="selectOption('${option}')">${option}</div>`
+	}
+}
+
+function selectOption(option) {
+	document.querySelector('.options').classList.remove(`active`);
+	document.querySelector('.options').innerHTML = ''
+	switch (scene + '-' + line + '-[' + option + ']') {
+		case 'second-scene-2-[option 1]': 
+			alert(1)
+			changeScene('first-scene') 
+			break;
+		case 'second-scene-2-[option-2]':
+			alert(2)
+			changeScene('first-scene') 
+			break;
+		case 'second-scene-2-[option---3]':
+			alert(3)
+			changeScene('first-scene') 
+			break;
+	}
+}
+
 document.querySelector('body').addEventListener('click', () => {
 	switch (scene + '-' + line) {
 		case 'first-scene-1':
@@ -57,6 +84,9 @@ document.querySelector('body').addEventListener('click', () => {
 		case 'second-scene-1':
 			nextLine() 
 			selectActive('left')
+			break;
+		case 'second-scene-2':
+			generateOptions(['option 1', 'option-2', 'option---3'])
 			break;
 	}
 })

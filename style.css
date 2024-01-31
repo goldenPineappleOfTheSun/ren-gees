@@ -2,6 +2,7 @@ body {
 	font-size: 200%;
 	font-family: 'Cormorant Garamond', serif;
 	font-weight: bold;
+	margin: 0;
 }
 
 * {
@@ -141,4 +142,34 @@ body {
 
 .line.first-scene.line-1 {
 	display: block;
+}
+
+.options {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background: #00000088;
+	z-index: 100;
+	display: none;
+}
+
+.options.active {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+    align-items: center; 
+}
+
+.option {
+	background: #fff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin: 20px;
+    cursor: pointer;
+}
+
+.option:hover {
+	box-shadow: 0 0 10px white;
 }
