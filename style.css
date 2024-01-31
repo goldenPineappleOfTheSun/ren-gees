@@ -1,0 +1,98 @@
+body {
+	font-size: 200%;
+	font-family: 'Cormorant Garamond', serif;
+}
+
+.scene {
+	width: 100vw;
+	height: 100vh;
+	background: #000;
+}
+
+.bg {
+	width: 100vw;
+	height: 100vh;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.5s ease-in-out;
+}
+
+.dialog {
+	position: fixed;
+    bottom: 0;
+    left: 10%;
+    width: 80%;
+    height: 20%;
+    z-index: 10;
+    background: #fff;
+    border-radius: 30px 30px 0 0;
+}
+
+.left-characters {
+	position: absolute;
+	left: 20%;
+    width: 30%;
+	transform-origin: center;
+	transform: translateX(-50%);
+}
+
+.right-characters {
+	position: absolute;
+	left: 80%;
+    width: 30%;
+	transform-origin: center;
+	transform: translateX(-50%) scaleX(-1);
+}
+
+.left-character-names {
+	position: absolute;
+	left: 20%;
+	min-width: 15%;
+	text-align: center;
+	transform-origin: center;
+	transform: translate(-50%, 50%);
+    bottom: 100%;
+    padding: 1rem;
+    z-index: 11;
+    background: wheat;
+    border-radius: 10px;
+}
+
+.right-character-names {
+	position: absolute;
+	left: 80%;
+	min-width: 15%;
+	max-width: 40%;
+	text-align: center;
+	transform-origin: center;
+	transform: translate(-50%, 50%);
+    bottom: 100%;
+    padding: 1rem;
+    z-index: 11;
+    background: wheat;
+    border-radius: 10px;
+}
+
+.character {
+	position: absolute;
+    left: 50%;
+	transform: translateX(-50%);
+    bottom: 0%;
+    width: 100%;
+}
+
+.character .ron.moaning {
+	background-image: url(ron_normal.png);
+}
+
+.talk {
+	position: absolute;
+	width: 100%;
+	top: 50%;
+	transform: translateY(-50%);
+	text-align: center;
+}
+
+/*.first-scene .bg {
+	background-image: url(https://www.findingtheuniverse.com/wp-content/uploads/2019/06/Harry-Potter-Durham-Cathedral_by_Laurence-Norah.jpg);
+}*/
