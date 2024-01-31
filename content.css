@@ -5,3 +5,13 @@
 .second-scene .bg {
 	background-image: url(bg2.jpg);
 }
+
+.line.ron,
+.character-name.ron {
+	color: #ddba00;
+}
+
+.line.malfoy,
+.character-name.malfoy {
+	color: #5fffdb;
+}
