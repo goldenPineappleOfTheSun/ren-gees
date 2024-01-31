@@ -8,6 +8,8 @@ function nextLine() {
 }
 
 function changeScene(name) {
+	document.querySelector(`.scene`).classList.remove(scene);
+	document.querySelector(`.scene`).classList.add(name);
 	scene = name
 	line = 1
 	document.querySelectorAll('.line').forEach(x => x.style.display = 'none')
