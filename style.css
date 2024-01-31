@@ -3,6 +3,10 @@ body {
 	font-family: 'Cormorant Garamond', serif;
 }
 
+* {
+    user-select: none;
+}
+
 .scene {
 	width: 100vw;
 	height: 100vh;
@@ -79,10 +83,11 @@ body {
 	transform: translateX(-50%);
     bottom: 0%;
     width: 100%;
+    display: none;
 }
 
-.character .ron.moaning {
-	background-image: url(ron_normal.png);
+.character-name {
+	display: none;
 }
 
 .talk {
