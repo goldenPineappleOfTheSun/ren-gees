@@ -87,6 +87,26 @@ body {
     display: none;
 }
 
+.left-active .left-characters .character {
+	width: 100%;
+	filter: contrast(1);
+}
+
+.left-active .right-characters .character {
+	width: 80%;
+	filter: contrast(0.5);
+}
+
+.right-active .left-characters .character {
+	width: 80%;
+	filter: contrast(0.5);
+}
+
+.right-active .right-characters .character {
+	width: 100%;
+	filter: contrast(1);
+}
+
 .character-name {
 	display: none;
 }

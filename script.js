@@ -1,7 +1,9 @@
 let scene = 'first-scene'
 let line = 1
+let active = null
 selectLeftCharacter('.ron.moaning')
 selectRightCharacter('.malfoy.moaning')
+selectActive('left')
 
 function nextLine() {
 	line += 1
@@ -32,10 +34,17 @@ function selectRightCharacter(selector) {
 	document.querySelector(`.right-character-names ${selector}`).style.display = 'block'
 }
 
+function selectActive(side) {
+	document.querySelector('.scene').classList.remove('left-active');
+	document.querySelector('.scene').classList.remove('right-active');
+	document.querySelector('.scene').classList.add(`${side}-active`);
+}
+
 document.querySelector('body').addEventListener('click', () => {
 	switch (scene + '-' + line) {
 		case 'first-scene-1':
 			nextLine() 
+			selectActive('right')
 			break;
 		case 'first-scene-2':
 			nextLine() 
@@ -47,6 +56,7 @@ document.querySelector('body').addEventListener('click', () => {
 			break;
 		case 'second-scene-1':
 			nextLine() 
+			selectActive('left')
 			break;
 	}
 })
