@@ -80,11 +80,17 @@ body {
 
 .character {
 	position: absolute;
-    left: 50%;
+    left: 20%;
 	transform: translateX(-50%);
-    bottom: 0%;
+    bottom: 0;
     width: 100%;
-    display: none;
+    opacity: 0;
+    transition: 0.3s ease-in;
+}
+
+.character.shown {
+    left: 50%;
+	opacity: 1;
 }
 
 .left-active .left-characters .character {
@@ -108,7 +114,17 @@ body {
 }
 
 .character-name {
-	display: none;
+	position: relative;
+	top: 20px;
+	opacity: 0;
+	line-height: 0;
+    transition: 0.1s ease-in;
+}
+
+.character-name.shown {
+	top: 0;
+	opacity: 1;
+	line-height: 1rem;
 }
 
 .talk {

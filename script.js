@@ -21,17 +21,17 @@ function changeScene(name) {
 }
 
 function selectLeftCharacter(selector) {
-	document.querySelectorAll('.left-characters .character').forEach(x => x.style.display = 'none')
-	document.querySelectorAll('.left-character-names .character-name').forEach(x => x.style.display = 'none')
-	document.querySelector(`.left-characters ${selector}`).style.display = 'block'
-	document.querySelector(`.left-character-names ${selector}`).style.display = 'block'
+	document.querySelectorAll('.left-characters .character').forEach(x => x.classList.remove('shown'))
+	document.querySelectorAll('.left-character-names .character-name').forEach(x => x.classList.remove('shown'))
+	document.querySelector(`.left-characters ${selector}`).classList.add('shown')
+	document.querySelector(`.left-character-names ${selector}`).classList.add('shown')
 }
 
 function selectRightCharacter(selector) {
-	document.querySelectorAll('.right-characters .character').forEach(x => x.style.display = 'none')
-	document.querySelectorAll('.right-character-names .character-name').forEach(x => x.style.display = 'none')
-	document.querySelector(`.right-characters ${selector}`).style.display = 'block'
-	document.querySelector(`.right-character-names ${selector}`).style.display = 'block'
+	document.querySelectorAll('.right-characters .character').forEach(x => x.classList.remove('shown'))
+	document.querySelectorAll('.right-character-names .character-name').forEach(x => x.classList.remove('shown'))
+	document.querySelector(`.right-characters ${selector}`).classList.add('shown')
+	document.querySelector(`.right-character-names ${selector}`).classList.add('shown')
 }
 
 function selectActive(side) {
