@@ -8,7 +8,10 @@ function nextLine() {
 }
 
 function changeScene(name) {
-
+	scene = name
+	line = 1
+	document.querySelectorAll('.line').forEach(x => x.style.display = 'none')
+	document.querySelector(`.talk .${scene}.line-${line}`).style.display = 'block'
 }
 
 document.querySelector('body').addEventListener('click', () => {
@@ -17,6 +20,12 @@ document.querySelector('body').addEventListener('click', () => {
 			nextLine() 
 			break;
 		case 'first-scene-2':
+			nextLine() 
+			break;
+		case 'first-scene-3':
+			changeScene('second-scene') 
+			break;
+		case 'second-scene-1':
 			nextLine() 
 			break;
 	}
