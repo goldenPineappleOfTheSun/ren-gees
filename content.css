@@ -6,6 +6,14 @@
 	background-image: url(bg2.jpg);
 }
 
+.angry-scene .bg {
+	background-image: url(bg2.jpg);
+}
+
+.love-scene .bg {
+	background-image: url(bg2.jpg);
+}
+
 .line.ron,
 .character-name.ron {
 	color: #ddba00;

@@ -2,9 +2,14 @@ let scene = 'first-scene'
 let line = 1
 let active = null
 let music = false
-selectLeftCharacter('.ron.moaning')
-selectRightCharacter('.malfoy.moaning')
-selectActive('left')
+let blockedClick = false
+
+function init() {
+	selectLeftCharacter('.ron.normal')
+	selectRightCharacter('.malfoy.normal')
+	selectActive('left')
+}
+init()
 
 function nextLine() {
 	line += 1
@@ -52,23 +57,28 @@ function generateOptions(optionTexts) {
 function selectOption(option) {
 	document.querySelector('.options').classList.remove(`active`);
 	document.querySelector('.options').innerHTML = ''
+	blockedClick = true
 	switch (scene + '-' + line + '-[' + option + ']') {
-		case 'second-scene-2-[option 1]': 
-			alert(1)
-			changeScene('first-scene') 
+		case 'second-scene-2-[Я ненавижу тебя!]': 
+			changeScene('angry-scene') 
+			selectLeftCharacter('.malfoy.angry')
+			selectRightCharacter('.ron.angry')
+			selectActive('right')
 			break;
-		case 'second-scene-2-[option-2]':
-			alert(2)
-			changeScene('first-scene') 
-			break;
-		case 'second-scene-2-[option---3]':
-			alert(3)
-			changeScene('first-scene') 
+		case 'second-scene-2-[Я люблю тебя!]':
+			changeScene('love-scene') 
+			selectLeftCharacter('.malfoy.shocked')
+			selectActive('right')
 			break;
 	}
 }
 
 document.querySelector('body').addEventListener('click', () => {
+	if (blockedClick) {
+		blockedClick = false
+		return
+	}
+
 	switch (scene + '-' + line) {
 		case 'first-scene-1':
 			nextLine() 
@@ -79,15 +89,49 @@ document.querySelector('body').addEventListener('click', () => {
 			break;
 		case 'first-scene-3':
 			changeScene('second-scene') 
-			selectLeftCharacter('.malfoy.moaning')
-			selectRightCharacter('.ron.moaning')
+			selectLeftCharacter('.malfoy.normal')
+			selectRightCharacter('.ron.normal')
 			break;
 		case 'second-scene-1':
 			nextLine() 
 			selectActive('left')
 			break;
 		case 'second-scene-2':
-			generateOptions(['option 1', 'option-2', 'option---3'])
+			generateOptions(['Я ненавижу тебя!', 'Я люблю тебя!'])
+			break;
+		case 'angry-scene-1':
+			nextLine() 
+			selectActive('left')
+			break;
+		case 'angry-scene-2':
+			nextLine() 
+			selectActive('left')
+			selectLeftCharacter('.malfoy.normal')
+			selectRightCharacter('.ron.normal')
+			break;
+		case 'love-scene-1':
+			nextLine() 
+			selectActive('left')
+			break;
+		case 'love-scene-2':
+			nextLine() 
+			break;
+		case 'love-scene-3':
+			nextLine() 
+			selectLeftCharacter('.malfoy.normal')
+			break;
+		case 'love-scene-4':
+			nextLine() 
+			selectActive('right')
+			break;
+		case 'love-scene-5':
+			nextLine() 
+			break;
+		case 'love-scene-6':
+			nextLine() 
+			selectActive('left')
+			selectLeftCharacter('.malfoy.normal')
+			selectRightCharacter('.ron.normal')
 			break;
 	}
 	if (!music) {
