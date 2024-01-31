@@ -1,6 +1,7 @@
 let scene = 'first-scene'
 let line = 1
 let active = null
+let music = false
 selectLeftCharacter('.ron.moaning')
 selectRightCharacter('.malfoy.moaning')
 selectActive('left')
@@ -88,5 +89,10 @@ document.querySelector('body').addEventListener('click', () => {
 		case 'second-scene-2':
 			generateOptions(['option 1', 'option-2', 'option---3'])
 			break;
+	}
+	if (!music) {
+		music = true
+		let audio = new Audio('без названия.wav');
+		audio.play();
 	}
 })
